@@ -8,7 +8,7 @@ export default class EdcbErrParser extends AbstractTsErrParser {
   }
 
   parsePIDs(rawText: string): TsErrPIDInfo[] {
-    const NEW_LINE_CODE = '\r\n';
+    const NEW_LINE_CODE = /\r?\n/;
     const TS_ERR_PID_REGEX = /^PID:0x([\dA-F]{4})Total:(\d+)Drop:(\d+)Scramble:(\d+)(.*)$/;
     // [1]: PID(HEX)
     // [2]: Total
